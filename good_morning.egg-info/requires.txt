@@ -1,0 +1,14 @@
+numpy
+pandas
+pymysql
+python-dateutil
+beautifulsoup4
+
+[:python_version < "3.0"]
+futures
+
+[:python_version < "3.3"]
+mock
+
+[:python_version == "2.6" or python_version == "2.7"]
+futures>=3.0.5
