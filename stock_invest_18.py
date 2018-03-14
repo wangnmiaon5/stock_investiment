@@ -30,13 +30,12 @@ import numpy as np
 import pandas as pd
 import datetime
 
-os.chdir('/Users/miaowang/Box Sync/2017DS/stock_investment_2018/good-morning')
+os.chdir('/Users/yipan/Desktop/stock_investment')
 import good_morning as gm
 dir(gm)
 kr = gm.KeyRatiosDownloader()
 kr_frames = kr.download('AMTD')
 print (kr_frames[0])
-
 
 kr = gm.FinancialsDownloader()
 kr_fins = kr.download('AAPL')
