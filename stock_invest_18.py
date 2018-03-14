@@ -30,16 +30,71 @@ import numpy as np
 import pandas as pd
 import datetime
 
-os.chdir('/Users/miaowang/Box Sync/2017DS/stock_investment_2018/good-morning')
+os.chdir('/Users/miaowang/Box Sync/2017DS/stock_investment_2018')
 import good_morning as gm
 dir(gm)
 kr = gm.KeyRatiosDownloader()
 kr_frames = kr.download('AMTD')
-print (kr_frames[0])
+data1 = kr_frames[0]
+
+data2 = kr_frames[1].iloc[kr_frames[1].index.get_loc('EBT Margin')]
 
 
-kr = gm.FinancialsDownloader()
-kr_fins = kr.download('AAPL')
+
+data2.index.values.tolist()
+
+
+data2.iloc[i]['EBT Margin']
+
+data2.index
+month['Fund'] = month.index
+
+to_del = perf2.loc[perf2['Fund'].isin(drop_list)].index.tolist()
+
+data1['2020'] = (data1['2018']/data1['2008'])**(1/(2018.00-2008.00-1))-1
+
+print (data2.index=='Revenue')
+
+data2.iloc[data2.index.get_loc('Revenue')]
+
+
+
+data2.get_loc('Renenue')
+
+data1 = kr_frames[0].T[['Book Value Per Share * USD', 
+                 'Free Cash Flow USD Mil', 
+                 'Free Cash Flow Per Share * USD',
+                 'Dividends USD',
+                 'Earnings Per Share USD', 
+                 'Shares Mil',
+                 'Payout Ratio % *']]
+
+
+
+
+
+
+
+df = df.assign(delta_A=np.zeros(len(df.A)))
+df['delta_A'][0] = 0  # start at 'no-change'
+df['delta_A'][1:] = df.A[1:].values - df.A[:-1].values
+
+
+
+
+df.reindex(df.index.drop(1))
+
+
+data1.columns = data1.index
+
+data1.reset_index(drop=False, inplace=True)
+
+df.reset_index().T
+data = data1.reset_index(drop=False, inplace=True)
+data.T
+
+kr2 = gm.FinancialsDownloader()
+kr_fins = kr2.download('AMTD')
 
 
 from pandas_datareader import data
@@ -49,7 +104,7 @@ import pandas as pd
 
 
 # Define the instruments to download. We would like to see Apple, Microsoft and the S&P500 index.
-tickers = ['AAPL', 'MSFT', 'SPY']
+tickers = ['AMTD']
 
 # Define which online source one should use
 data_source = 'google'
