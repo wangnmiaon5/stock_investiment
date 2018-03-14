@@ -30,20 +30,19 @@ import numpy as np
 import pandas as pd
 import datetime
 
+
 os.chdir('/Users/miaowang/Box Sync/2017DS/stock_investment_2018')
+os.chdir('/Users/yipan/Desktop/stock_investment')
+
 import good_morning as gm
 dir(gm)
 kr = gm.KeyRatiosDownloader()
 kr_frames = kr.download('AMTD')
 data1 = kr_frames[0]
 
+
 data2 = kr_frames[1].iloc[kr_frames[1].index.get_loc('EBT Margin')]
-
-
-
 data2.index.values.tolist()
-
-
 data2.iloc[i]['EBT Margin']
 
 data2.index
@@ -95,7 +94,6 @@ data.T
 
 kr2 = gm.FinancialsDownloader()
 kr_fins = kr2.download('AMTD')
-
 
 from pandas_datareader import data
 
